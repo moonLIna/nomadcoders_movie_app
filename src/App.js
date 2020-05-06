@@ -17,13 +17,14 @@ const foodILike = [
     image : "https://vaya.in/recipes/wp-content/uploads/2018/02/Milk-Chocolate-1.jpg"
   }
 ]
+function renderFood(dish){
+  return<Food name={dish.name} pic={dish.image}/>
+}
 
 function App() {
   return (
     <div className="App">
-      {foodILike.map(dish => (
-        <Food name={ dish.name } pic={ dish.image }/>
-      ))}
+      {foodILike.map(renderFood)}
     </div>
   );
 }
