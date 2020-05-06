@@ -1,15 +1,29 @@
 import React from 'react';
 
-function Food({name}) {
-return <h1>I love {name}</h1>;
+function Food({name, pic}) {
+return <div>
+  <h2>I love {name}</h2>
+  <img src={pic}/>
+</div>;
 }
+
+const foodILike = [
+  {
+    name : "water",
+    image : "https://www.google.com/search?q=water&newwindow=1&safe=active&sxsrf=ALeKk00VduxSTpzfuTq-O09O30C5RUq76A:1588749535904&source=lnms&tbm=isch&sa=X&ved=2ahUKEwi20OWd2Z7pAhWEHqYKHVIUCOcQ_AUoAXoECBwQAw&biw=1280&bih=607&dpr=1.5#imgrc=RqJdkQTA4o38fM"
+  },
+  {
+    name : "choco",
+    image : "https://vaya.in/recipes/wp-content/uploads/2018/02/Milk-Chocolate-1.jpg"
+  }
+]
 
 function App() {
   return (
     <div className="App">
-      hello
-      <Food name="drinking"/>
-      <Food name="water"/>
+      {foodILike.map(dish => (
+        <Food name={ dish.name } pic={ dish.image }/>
+      ))}
     </div>
   );
 }
