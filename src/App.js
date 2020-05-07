@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
-
+/*
 function Food({name, pic, rating}) {
   return <div>
     <h2>I love {name}</h2>
@@ -46,6 +46,26 @@ function App() {
       ))}
     </div>
   );
+}
+*/
+
+class App extends React.Component {
+  state = {
+    count : 0
+  };
+  add = ()  => {
+    return ++this.state.count;
+  };
+  minus = ()  => {
+    console.log("Minus");
+  };
+  render(){
+      return <div>
+        <h1>The number is {this.state.count}</h1>
+        <button onClick={this.add}>Add</button>
+        <button onClick={this.minus}>Minus</button>
+      </div>
+  }
 }
 
 export default App;
